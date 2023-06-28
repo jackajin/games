@@ -1,0 +1,325 @@
+@charset "utf-8";
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: #2d3e50;
+    overflow: hidden;
+    color: white;
+    font-size: 40px;
+}
+
+@keyframes big_small {
+    0% {
+        background-size: 246px 83px;
+    }
+    100% {
+        background-size: 273px 92px;
+    }
+}
+
+@-webkit-keyframes big_small {
+    0% {
+        background-size: 246px 83px;
+    }
+    100% {
+        background-size: 273px 92px;
+    }
+}
+
+.mask {
+    width: 620px;
+    height: 100vh;
+    position: relative;
+    /* 273 92 */
+    /* display: none; */
+}
+
+.mask .btn {
+    width: 273px;
+    height: 92px;
+    position: absolute;
+    background-image: url(./img/startGame.png);
+    background-repeat: no-repeat;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    animation: 1s big_small infinite linear alternate;
+    -webkit-animation: 1s big_small infinite linear alternate;
+}
+
+.warp {
+    width: 620px;
+    height: 908px;
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.warp .header {
+    width: 580px;
+    height: 114px;
+}
+
+.warp .header p {
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.warp .main {
+    width: 580px;
+    height: 580px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.warp .main .list {
+    flex-direction: row;
+    width: 132px;
+    position: relative;
+    height: 576px;
+}
+
+.warp .main .list li {
+    width: 100%;
+    height: 188px;
+    padding: 2px 0 0 13px;
+    box-sizing: border-box;
+    position: absolute;
+    background: chartreuse;
+    box-shadow: 0px -4px 5px #2d3e50;
+    border-radius: 5px;
+}
+
+.warp .main .list .border {
+    border: 2px solid white;
+}
+
+.warp .main .list li:nth-of-type(1) {
+    background: coral;
+}
+
+.warp .main .list li:nth-of-type(2) {
+    background: pink;
+}
+
+.warp .footer {
+    height: 204px;
+    width: 100%;
+    border-top: 1px dashed #465456;
+    padding: 9px 0;
+    position: relative;
+}
+
+.warp .footer .center {
+    width: 224px;
+    height: 184px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.warp .footer .center span {
+    width: 132px;
+    height: 188px;
+    padding: 2px 0 0 13px;
+    box-sizing: border-box;
+    position: absolute;
+    background: chartreuse;
+    border-radius: 5px;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+}
+
+.warp .footer .center span:nth-of-type(1) {
+    left: 0;
+    top: 0;
+    transition: 1s;
+}
+
+.warp .footer .center .second {
+    left: 93px;
+    box-shadow: -5px 0px 0px #2d3e50;
+    background: red;
+}
+
+.warp .footer .center .trans {
+    transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.warp .footer .giveUp {
+    width: 132px;
+    height: 188px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    border: 2px solid white;
+}
+
+.warp .footer .giveUp span {
+    right: 0;
+    position: absolute;
+    display: block;
+    width: 132px;
+    height: 0%;
+    background: pink;
+    transition: 1s;
+}
+
+.warp .footer .giveUp span:nth-of-type(1) {
+    top: 0px;
+}
+
+.warp .footer .giveUp span:nth-of-type(2) {
+    top: 33.3333333%;
+}
+
+.warp .footer .giveUp span:nth-of-type(3) {
+    top: 66.666666%;
+}
+
+.warp .footer .giveUpTop {
+    width: 132px;
+    height: 188px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    opacity: 0;
+    border: 2px solid white;
+    z-index: 999;
+}
+
+.gameOver {
+    width: 100%;
+    position: fixed;
+    background: #2d3e50;
+    top: 0;
+    left: 0;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+
+.gameOver span {
+    line-height: 800px;
+}
+
+.gameOver span b {
+    color: red;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+@keyframes pig {}
+
+.reward {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    text-align: center;
+    display: none;
+}
+
+@keyframes bg {
+    0% {
+        transform: translateY(-300px);
+        opacity: 0;
+        /* background: url(./img/bg.jpeg) 100% 100%; */
+    }
+    100% {
+        /* background: url(./img/bg.jpeg) center center; */
+    }
+}
+
+@keyframes pig {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.reward .pig {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    border-radius: 100%;
+    margin-left: -75px;
+    margin-top: -75px;
+    left: 50%;
+    top: 50%;
+    background: url(./img/bg.jpeg);
+    background-size: 100% 100%;
+}
+
+.reward .pig span {
+    position: absolute;
+    width: 300px;
+    left: -60px;
+    /* font-size: 20px; */
+    color: pink;
+    display: none;
+    top: 150px;
+}
+
+
+/* 弃牌重置 */
+
+.reGiveUp {
+    top: 0;
+    left: 0;
+    width: 620px;
+    height: 100%;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    display: none;
+    transition: 1s;
+}
+
+.reGiveUp section {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -150px;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.reGiveUp section span {
+    color: #999;
+    text-align: center;
+}
+
+.reGiveUp section input {
+    width: 90%;
+    height: 50px;
+    border: 1px solid #999;
+    outline: none;
+    font-size: 30px;
+}
+
+.reGiveUp section button {
+    width: 100px;
+    height: 50px;
+    background: blue;
+    border: 1px solid #999;
+    color: white;
+    font-size: 20px;
+    outline: none;
+}

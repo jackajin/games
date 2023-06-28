@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=620,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>别踩白块</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .box {
+            width: 620px;
+            height: 856px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .box .item {
+            width: 620px;
+            height: 276px;
+            position: absolute;
+        }
+        
+        .box .item:nth-child(1) {
+            top: -276px;
+        }
+        
+        .box .item:nth-child(2) {
+            top: 0px;
+        }
+        
+        .box .item:nth-child(3) {
+            top: 276px;
+        }
+        
+        .box .item:nth-child(4) {
+            top: 552px;
+        }
+        
+        .box .item span {
+            float: left;
+            width: 155px;
+            height: 100%;
+            /* background: yellow; */
+        }
+        
+        .box .item .bg {
+            border-top: 2px pink solid;
+            height: 274;
+            background: black;
+        }
+        
+        .box .item .begin {
+            background: skyblue;
+            font-size: 30px;
+            font-family: "华文楷体";
+            text-align: center;
+            line-height: 276px;
+        }
+        
+        .box .item .hide {
+            background: aqua;
+            opacity: 0;
+            transition: 1.5s;
+        }
+        
+        .sing {
+            height: 132px;
+            width: 620px;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+        }
+        
+        .sing p {
+            line-height: 132px;
+            font-size: 30px;
+            font-family: "华文楷体";
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="item">
+            <span></span>
+            <span></span>
+            <span class="bg"></span>
+            <span></span>
+        </div>
+        <div class="item">
+            <span class="bg"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="item">
+            <span></span>
+            <span></span>
+            <span class="bg"></span>
+            <span></span>
+        </div>
+        <div class="item">
+            <span></span>
+            <span class="begin">开始</span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+    <div class="sing">
+        <p>小星星</p>
+    </div>
+    <audio src="./video/小星星.mp3" controls="controls" loop="true" hidden="true"></audio>
+
+</body>
+<script src="./js/index.js"></script>
+
+</html>
